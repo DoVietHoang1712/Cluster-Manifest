@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: hoang1712/nginx:1.0.0
+        image: hoang1712/nginx:1.0.0 # {"$imagepolicy": "flux-system:nginx"}
         resources:
           limits:
             memory: "128Mi"

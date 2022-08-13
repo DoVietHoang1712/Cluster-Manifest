@@ -1,0 +1,20 @@
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageUpdateAutomation
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  checkout:
+    branch: main
+    gitRepositoryRef:
+      name: flux-system
+  commit:
+    authorEmail: fluxcdbot@particule.io
+    authorName: fluxcdbot
+    messageTemplate: 'update image'
+  interval: 1m0s
+  push:
+    branch: main
+  update:
+    path: ./default
+    strategy: Setters
